@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ChosenBase from '../actions/ChosenBase'
+import ChosenBase from '../actions/pizza'
 import { bases } from '../db'
 
 class PizzaBase extends Component{
