@@ -1,8 +1,12 @@
 import  CHANGE_BASE  from '../actions/pizza'
+import  CHANGE_SAUCE  from '../actions/pizza'
+
 
 const initialState = {
   base: " ",
-  price_base: " "
+  price_base: " ",
+  sauce: " ",
+  price_sauce: " "
 }
 
 export default function (state = initialState, {type, payload}) {
@@ -13,8 +17,14 @@ export default function (state = initialState, {type, payload}) {
           base: payload.select_base,
           price_base: payload.price
         }
-        default:
-          return state
+      case CHANGE_SAUCE:
+      return{
+        ...state,
+        base: payload.select_sauce,
+        price_sauce: payload.price
+      }
+      default:
+        return state
     }
    
   }

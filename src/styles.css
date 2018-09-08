@@ -1,0 +1,32 @@
+li{
+    list-style-type:none;
+    
+}
+
+.container_items{
+    width: 200px;
+   
+}
+
+.label_titles{
+    font-family: Helvetica;
+    background-color: blue
+}
+
+.label-item{
+    font-family: Helvetica;
+    display: inline-block;
+    background-color: yellow;
+    
+}
+
+.label-item-price{
+    font-family: Helvetica;
+    display: inline-block;
+    background-color: green;
+
+
+}
+
+
+
