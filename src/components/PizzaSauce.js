@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ChosenSauce  from '../actions/pizza'
+import {ChosenSauce}  from '../actions/pizza'
 import { sauces } from '../db'
 import '../styles.css'
 
@@ -16,13 +16,12 @@ class PizzaSauce extends Component{
     }
     // console.log(event)
     handleChange(event){
-        this.setState({ 
-            id: event.target.key, 
-            name: event.target.title, 
-            price: event.target.value 
+        this.setState({
+            id: event.target.id,
+            name: event.target.name,
+            price: event.target.value
         })
-       
-        this.props.ChosenSauce(event.target.title, event.target.value)
+        this.props.ChosenSauce(event.target.id, event.target.value)
 
     }
     render(){
@@ -32,7 +31,7 @@ class PizzaSauce extends Component{
                 <div className="container_items">
                     <ul>
                         {sauces.map(sauce => <li key={ sauce.id }>
-                        <input className="radio_button"  name={ 'sauce' } type={ 'radio' } onChange={this.handleChange} />
+                        <input className="radio_button"  name={ "sauce" } type={ 'radio' } value={sauce.price} id={sauce.name} onChange={this.handleChange} />
                        <div className="label-item"> <label>{ sauce.name }</label> </div>
                        <br/>
                         <div className="label-item-price"><label> &euro; { sauce.price }</label></div>
